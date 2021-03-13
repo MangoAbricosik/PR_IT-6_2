@@ -19,7 +19,7 @@ namespace PR_IT_6_2
 
     int maxV = int.MinValue, maxVSec = int.MinValue, minV = int.MaxValue, minVSec = int.MaxValue;        int firstV = 0, twoV = 0;
     int i = 0, j = 0;                                                                                    int threeV = 0, fourV = 0;
-    int value = -101, valueSec = -101, cout = 0, coutSec = 0;
+    int value = -101, valueSec = -101, cout = 0, coutSec = 0, coutTh = 0;
 
     public void DefAll()
     {
@@ -130,19 +130,19 @@ namespace PR_IT_6_2
           {
             for (int j = 0; j < 5; j++)
             {
-              value += massiv[i, j];
-              valueSec += massiv[i, j];
+              coutTh += massiv[i, j];
             }
-            if (maxV < value)
+            if (maxV < coutTh)
             {
-              maxV = value;
+              maxV = coutTh;
               cout = i;
             }
-            if (maxV > value)
+            if (minV > coutTh)
             {
-              maxVSec = value;
+              minV = coutTh;
               coutSec = i;
             }
+            coutTh = 0;
           }
           label1.Text = "Максимальная строка = " + cout.ToString() + " Минимальная строка = " + coutSec.ToString();
           break;
